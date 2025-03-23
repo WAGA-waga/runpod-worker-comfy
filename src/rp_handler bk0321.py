@@ -46,10 +46,10 @@ def validate_input(job_input):
         except json.JSONDecodeError:
             return None, "Invalid JSON format in input"
 
-    # # Validate 'workflow' in input
-    # workflow = job_input.get("workflow")
-    # if workflow is None:
-    #     return None, "Missing 'workflow' parameter"
+    # Validate 'workflow' in input
+    workflow = job_input.get("workflow")
+    if workflow is None:
+        return None, "Missing 'workflow' parameter"
 
     # Validate 'images' in input, if provided
     images = job_input.get("images")
@@ -63,8 +63,7 @@ def validate_input(job_input):
             )
 
     # Return validated data and no error
-    # return {"workflow": workflow, "images": images}, None
-    return {"images": images}, None
+    return {"workflow": workflow, "images": images}, None
 
 
 def check_server(url, retries=500, delay=50):
@@ -238,8 +237,7 @@ def process_output_images(outputs, job_id):
     for node_id, node_output in outputs.items():
         if "images" in node_output:
             for image in node_output["images"]:
-                if image['type'] == "output":
-                    output_images = os.path.join(image["subfolder"], image["filename"])
+                output_images = os.path.join(image["subfolder"], image["filename"])
 
     print(f"runpod-worker-comfy - image generation is done")
 
@@ -296,20 +294,8 @@ def handler(job):
         return {"error": error_message}
 
     # Extract validated data
-    ### workflow = validated_data["workflow"]
-    
-    workflow_dir = os.path.dirname(os.path.abspath(__file__))
-    workflow_file_name = 'workflow_merge.json'
-    workflow_file_path = os.path.join(workflow_dir, workflow_file_name)
-
-    with open(workflow_file_path, 'r') as file_workflow:
-        workflow = json.load(file_workflow)
-
-    ### images = validated_data.get("images")
-
-    with open('test_resources/images/image_base64.txt', 'r') as image_file:
-        image_file_content = image_file.read()
-    images = [{"name": "img_input.jpg", "image": image_file_content}]
+    workflow = validated_data["workflow"]
+    images = validated_data.get("images")
 
     # Make sure that the ComfyUI API is available
     check_server(
