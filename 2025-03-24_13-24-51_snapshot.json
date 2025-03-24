@@ -1,0 +1,22 @@
+{
+    "comfyui": "9aac21f894a122ddb8d825c57ad61c0db5e630db",
+    "git_custom_nodes": {
+        "https://github.com/cubiq/ComfyUI_IPAdapter_plus": {
+            "hash": "9d076a3df0d2763cef5510ec5ab807f6632c39f5",
+            "disabled": false
+        },
+        "https://github.com/Jaminanim/ComfyUI-Random-Int-Divisor-Node": {
+            "hash": "181e11e74a5b75bb43ca54604ddc2858e6a405d6",
+            "disabled": false
+        }
+    },
+    "cnr_custom_nodes": {
+        "comfyui_essentials": "1.1.0"
+    },
+    "file_custom_nodes": [
+        {
+            "filename": "websocket_image_save.py",
+            "disabled": false
+        }
+    ]
+}
