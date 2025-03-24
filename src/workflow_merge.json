@@ -1,7 +1,7 @@
 {
   "4": {
     "inputs": {
-      "ckpt_name": "SD1.5\\revAnimated_v2Rebirth.safetensors"
+      "ckpt_name": "SD1.5/revAnimated_v2Rebirth.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -53,7 +53,7 @@
   },
   "12": {
     "inputs": {
-      "image": "133.png"
+      "image": "img_input1.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -80,7 +80,7 @@
   },
   "38": {
     "inputs": {
-      "image": "img_input.jpg"
+      "image": "img_input2.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -209,7 +209,7 @@
   },
   "55": {
     "inputs": {
-      "vae_name": "SD1.5\\klF8Anime2VAE_klF8Anime2VAE.safetensors"
+      "vae_name": "SD1.5/klF8Anime2VAE_klF8Anime2VAE.safetensors"
     },
     "class_type": "VAELoader",
     "_meta": {

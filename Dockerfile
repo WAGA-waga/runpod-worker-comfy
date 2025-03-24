@@ -42,7 +42,7 @@ ADD src/extra_model_paths.yaml ./
 WORKDIR /
 
 # Add scripts
-ADD src/start.sh src/restore_snapshot.sh src/rp_handler.py src/workflow_merge.json src/image_base64.txt test_input.json ./
+ADD src/start.sh src/restore_snapshot.sh src/rp_handler.py src/workflow_merge.json test_input.json ./
 RUN chmod +x /start.sh /restore_snapshot.sh
 
 # Optionally copy the snapshot file

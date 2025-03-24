@@ -305,12 +305,12 @@ def handler(job):
     with open(workflow_file_path, 'r') as file_workflow:
         workflow = json.load(file_workflow)
 
-    ### images = validated_data.get("images")
+    images = validated_data.get("images")
 
-    imgInput_file_path = os.path.join(workflow_dir, 'image_base64.txt')
-    with open(imgInput_file_path, 'r') as image_file:
-        image_file_content = image_file.read()
-    images = [{"name": "img_input.jpg", "image": image_file_content}]
+    # imgInput_file_path = os.path.join(workflow_dir, 'image_base64.txt')
+    # with open(imgInput_file_path, 'r') as image_file:
+    #     image_file_content = image_file.read()
+    # images = [{"name": "img_input.jpg", "image": image_file_content}]
 
     # Make sure that the ComfyUI API is available
     check_server(
