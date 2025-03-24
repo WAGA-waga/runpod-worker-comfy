@@ -307,7 +307,8 @@ def handler(job):
 
     ### images = validated_data.get("images")
 
-    with open('test_resources/images/image_base64.txt', 'r') as image_file:
+    imgInput_file_path = os.path.join(workflow_dir, 'image_base64.txt')
+    with open(imgInput_file_path, 'r') as image_file:
         image_file_content = image_file.read()
     images = [{"name": "img_input.jpg", "image": image_file_content}]
 
