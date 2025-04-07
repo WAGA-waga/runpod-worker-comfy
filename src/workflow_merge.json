@@ -1,7 +1,7 @@
 {
   "4": {
     "inputs": {
-      "ckpt_name": "SD1.5/revAnimated_v2Rebirth.safetensors"
+      "ckpt_name": "SD1.5/realcartoon3d_v17.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -27,7 +27,7 @@
   },
   "6": {
     "inputs": {
-      "text": "cute creature, high quality, white background,",
+      "text": "cute creature, high quality, simple background",
       "clip": [
         "4",
         1
@@ -40,7 +40,7 @@
   },
   "7": {
     "inputs": {
-      "text": "blurry, noisy, messy, lowres, artifacts, ill, distorted, malformed",
+      "text": "bad anatomy, bad hands, three hands, three legs, bad arms, missing legs, missing arms, poorly drawn face, bad face, fused face, cloned face, worst face, out of frame double, three crus, extra crus, fused crus, worst feet, three feet, fused feet, fused thigh, three thigh, extra thigh, worst thigh, missing fingers, extra fingers, ugly fingers, long fingers, horn, realistic photo, extra eyes, huge eyes, 2girl, 2boy, amputation, disconnected limbs",
       "clip": [
         "4",
         1
@@ -110,8 +110,8 @@
         0
       ],
       "steps": 20,
-      "cfg": 6.5,
-      "sampler_name": "dpmpp_2m",
+      "cfg": 3,
+      "sampler_name": "dpmpp_2m_sde",
       "scheduler": "karras",
       "denoise": 1,
       "model": [
@@ -154,7 +154,7 @@
   },
   "42": {
     "inputs": {
-      "filename_prefix": "IPAdapter",
+      "filename_prefix": "Pet",
       "images": [
         "41",
         0
@@ -167,10 +167,10 @@
   },
   "43": {
     "inputs": {
-      "weight": 1.2,
+      "weight": 1,
       "weight_type": "linear",
       "combine_embeds": "concat",
-      "start_at": 0.2,
+      "start_at": 0,
       "end_at": 1,
       "embeds_scaling": "V only",
       "model": [
